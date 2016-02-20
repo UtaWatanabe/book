@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class = "row">
+  <div class ="col-sm-10 col-md-10" ><!-- style="background-color:  red;" みたいな表記で色が追加できる-->
+  <!-- 数字の部分が12分割を示しているので､上記の場合は10：2で構築されている -->
 
+<p id="notice"><%= notice %></p>
 <h1>Git管理された蔵書管理アプリ</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -23,7 +26,7 @@
         <td><%= my_book.price %></td>
         <td><%= my_book.publisher %></td>
         <td><%= my_book.date %></td>
-        <td><%= image_tag my_book.image %></td>
+        <td><%= image_tag my_book.image, class:"img-responsive"%></td>
         <td><%= link_to 'Show', my_book %></td>
         <td><%= link_to 'Edit', edit_my_book_path(my_book) %></td>
         <td><%= link_to 'Destroy', my_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,7 +34,9 @@
     <% end %>
   </tbody>
 </table>
+  </div><!-- col-md-8 -->
 
-<br>
-
-<%= link_to 'New My book', new_my_book_path %>
+<div class="col-sm-2 col-md-2" style="background-color:">
+    <%= link_to 'New My book', new_my_book_path, class: 'btn btn-warning' %>
+  </div><!-- col-md-4 -->
+</div><!-- row -->
